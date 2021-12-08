@@ -55,12 +55,12 @@ var gitblog = function(config) {
         var month = unixTimestamp.getMonth() + 1;
         var date = unixTimestamp.getDate();
         var hour = unixTimestamp.getHours();
-        var minute = unixTimestamp.getMinutes();
-        var second = unixTimestamp.getSeconds();
+        //var minute = unixTimestamp.getMinutes();
+        //var second = unixTimestamp.getSeconds();
         hour = (hour<10)?'0'+hour:hour;
-        minute = (minute<10)?'0'+minute:minute;
-        second = (second<10)?'0'+second:second;
-        return year+'年'+month+'月'+date+'日'+' '+hour+':'+minute+':'+second;
+        //minute = (minute<10)?'0'+minute:minute;
+        //second = (second<10)?'0'+second:second;
+        return 'Tháng ' + month + ', ' + date + ', ' + year;
     }
 
     String.prototype.replaceAll = function(a, b) {
@@ -96,7 +96,7 @@ var gitblog = function(config) {
             }
             if (Object.keys(config.friends).length != 0) {
                 var menu_friend = document.getElementById("friends");
-                menu_friend.innerHTML = '<li><text style="font-zise:14px"><span style="color: white;transform:translateX(4px)">友链：</span></text></li>';
+                menu_friend.innerHTML = '<li><text style="font-zise:14px"><span style="color: white;transform:translateX(4px)">Other Blog：</span></text></li>';
                 for (var name in config.friends) {
                     menu_friend.innerHTML += '<li><a href=' + config.friends[name] + ' target="_blank"><span>' + name + '</span></a></li>';
                 }
@@ -624,7 +624,7 @@ var gitblog = function(config) {
                 }
                 data[i].body = data[i].body.replace(/<.*?>/g, "");
                 data[i].created_at = self.utc2localTime(data[i].created_at);
-                document.getElementById('issue-list').innerHTML += '<li><p class="date">' + data[i].created_at + '</p><h4 class="title"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h4><div class="excerpt"><p class="issue">' + data[i].body + '</p></div>' + '<ul class="meta"><li>' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
+                document.getElementById('issue-list').innerHTML += '<li><h3 class="title"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue">' + data[i].body + '</p></div>' + '<ul class="meta"><li>' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
             }
         },
         show: function(request_url) {

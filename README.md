@@ -358,10 +358,7 @@ The format of json are as follows:
 
 ### Dependence
 * [gitment](https://github.com/imsun/gitment)
-* [MathJax](https://www.mathjax.org/)
 * [jQuery](http://www.jquery.org/)
 * [Bootstrap](http://www.getbootstrap.com/)
 * [type.js](https://github.com/mattboldt/typed.js)
 
-## LICENSE
-MIT LICENSE

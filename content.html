@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="icon" href="images/avatar.jpg">
+    <link rel="icon" href="images/wanderer.jpg">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/gitment.css">
   </head>
   <body>
     <label class="navi-button">MENU</label>
-    <input type="text" class="search-input" placeholder="回车搜索">
+    <input type="text" class="search-input" placeholder="search">
     <img src="images/search.svg" class="search">
     <ul class="main-navication">
       <ul id="menu"></ul>
@@ -27,11 +27,11 @@
       </div>
       <div style="width:100%;background-color:#ffffff">
         <div class="container">
-          <div id="content" class="gitment-markdown" style="margin-top:50px;margin-bottom: 50px">内容加载中...</div>
+          <div id="content" class="gitment-markdown" style="margin-top:50px;margin-bottom: 50px">Content is loading...</div>
           <div class="post-tags" id="labels"></div>
           <hr>
           <div lang="zh-CN" class="gitment-container gitment-header-container">
-            <span><strong id="comments-num"></strong> 条评论</span>
+            <span><strong id="comments-num"></strong> comments</span>
           </div>
           <div lang="zh-CN" class="gitment-container gitment-comments-container">
             <ul class="gitment-comments-list" id="comment-list"></ul>
@@ -40,30 +40,30 @@
             <ul class="pagination" id="pages" style="display: none"></ul>
           </div>
           <div style="text-align:left">
-            <div lang="zh-CN" class="gitment-container gitment-editor-container">
+            <div class="gitment-container gitment-editor-container">
               <div id="avatar"></div>
               <div class="gitment-editor-main">
                 <div class="gitment-editor-header">
                   <nav class="gitment-editor-tabs">
-                    <button class="gitment-editor-tab gitment-selected" id="editComment">评论</button>
-                    <button class="gitment-editor-tab" id="preview">预览</button>
+                    <button class="gitment-editor-tab gitment-selected" id="editComment">Write</button>
+                    <button class="gitment-editor-tab" id="preview">Preview</button>
                   </nav>
                   <div class="gitment-editor-login" id='login'></div>
                 </div>
                 <div class="gitment-editor-body">
                   <div class="gitment-editor-write-field" id="write-field">
-                    <textarea placeholder="(发表评论)" title="请登入以发表评论" disabled id="comment-input"></textarea>
+                    <textarea placeholder="Leave a comment" title="请登入以发表评论" disabled id="comment-input"></textarea>
                   </div>
                   <div class="gitment-editor-preview-field gitment-hidden">
-                    <div class="gitment-editor-preview gitment-markdown" id="preview-content">（没有预览）</div>
+                    <div class="gitment-editor-preview gitment-markdown" id="preview-content">Nothing to preview</div>
                   </div>
                 </div>
               </div>
               <div class="gitment-editor-footer">
                 <a class="gitment-editor-footer-tip" href="https://guides.github.com/features/mastering-markdown/" target="_blank">
-                  支持 Markdown 语法
+                  Markdown Syntax
                 </a>
-                <button class="gitment-editor-submit" disabled>发送</button>
+                <button class="gitment-editor-submit" disabled>Comment</button>
               </div>
             </div>
           </div>

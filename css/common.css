@@ -137,7 +137,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 .tags {
     margin-top:10px
 }
-.tags a , .tags a:hover{
+.tags a {
     display: inline-block;
     border: 1px solid rgba(255,255,255,.8);
     border-radius: 999em;
@@ -147,6 +147,15 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
     text-decoration: none;
     margin-bottom: 6px;
     margin-right:5px;
-    color:#bfbfbf;
+    color:#7f8c8d;
     border-color:#bfbfbf
+}
+
+.tags a:hover {
+    border-color: #7f8c8d
+}
+
+.article {
+    margin: 0 auto;
+    max-width: 920px;
 }

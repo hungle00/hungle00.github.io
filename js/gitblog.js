@@ -51,16 +51,8 @@ var gitblog = function(config) {
     self.utc2localTime = function(time) {
         var time_string_utc_epoch = Date.parse(time);
         var unixTimestamp = new Date(time_string_utc_epoch);
-        var year = unixTimestamp.getFullYear();
-        var month = unixTimestamp.getMonth() + 1;
-        var date = unixTimestamp.getDate();
-        var hour = unixTimestamp.getHours();
-        //var minute = unixTimestamp.getMinutes();
-        //var second = unixTimestamp.getSeconds();
-        hour = (hour<10)?'0'+hour:hour;
-        //minute = (minute<10)?'0'+minute:minute;
-        //second = (second<10)?'0'+second:second;
-        return 'Tháng ' + month + ', ' + date + ', ' + year;
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return unixTimestamp.toLocaleDateString(undefined, options);
     }
 
     String.prototype.replaceAll = function(a, b) {
@@ -624,7 +616,7 @@ var gitblog = function(config) {
                 }
                 data[i].body = data[i].body.replace(/<.*?>/g, "");
                 data[i].created_at = self.utc2localTime(data[i].created_at);
-                document.getElementById('issue-list').innerHTML += '<li><h3 class="title"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue">' + data[i].body + '</p></div>' + '<ul class="meta"><li>' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
+                document.getElementById('issue-list').innerHTML += '<li class="mb-3"><h3 class="fs-4 fw-bold mb-2"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue fs-6">' + data[i].body + '</p></div>' + '<ul class="meta"><li>' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
             }
         },
         show: function(request_url) {

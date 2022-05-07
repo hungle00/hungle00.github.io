@@ -21,7 +21,7 @@ You can set labels for each article in Github issues page.
 ### Get this repo
 * You can **Fork** or **clone** repo [gitblog](https://github.com/imuncle/gitblog).Then you can customize by yourself.
 * The details of implementing can be found in repo [gitblog](https://github.com/imuncle/gitblog).
-* How to use Github API [Repos API](https://github.com/imuncle/gitblog/blob/master/api.html).
+* How to use Github API [Repos API](https://docs.github.com/en/rest/reference/repos).
 
 
 ### Dependence

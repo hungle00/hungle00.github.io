@@ -20,29 +20,33 @@
       <ul id="friends"></ul>
     </ul>
     <div class="main">
-      <div class="jumbotron" style="text-align: center;background-color:#ecf0f1;margin-bottom:0;">
+      <div class="py-5 text-center" style="background-color:#ecf0f1;">
         <h1 id="title"></h1>
         <br>
         <text id="instruction"></text>
       </div>
       <div class="container">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
-          <ul id="issue-list" class="main_content" style="padding-left: 0px; opacity: 1; transform: translateY(0px);">
-            <br>
-            <h4 class="title">Content is loading...</h4>
-            </br>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 visible-lg visible-md" style="margin: 72px auto 0 auto;">
-          <a style="line-height:1.1;font-weight:700;cursor:pointer;color:#808080;text-decoration: none">FEATURED TAGS</a>
-          <div class="tags" style="margin-top:10px" id="tags"></div>
-          <hr>
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <ul id="issue-list" class="main_content px-3" style="opacity: 1; transform: translateY(0px);">
+              <br>
+              <h4 class="title fs-5">Content is loading...</h4>
+              </br>
+            </ul>
+          </div>
+          <div class="col-md-3 d-none d-lg-block" style="margin: 72px auto 0 auto;">
+            <a class="right_title">FEATURED TAGS</a>
+            <div class="tags" id="tags"></div>
+            <hr>
+            <a href="https://hungle00.github.io/content.html?id=3" target="_blank" class="right_title">ABOUT ME</a>
+            <p style="color: #7f8c8d; font-size: 14px;">Code for food</p>
+            <hr>
+          </div>
         </div>
       </div>
       <div style="text-align: center">
         <ul class="pagination" id="pages" style="display: none"></ul>
       </div>
-    </div>
     <div class="footer" style="text-align: center">
       <div id='icon' style="display: flex;justify-content: center;padding: 0;align-items: center"></div>
       <div id="footer" style="text-align: center;background: #2c3e50;padding-top: 30px;color: white"></div>

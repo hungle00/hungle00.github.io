@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="icon" href="images/wanderer.jpg">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css">
   </head>
   <body>
@@ -20,45 +20,44 @@
       <ul id="friends"></ul>
     </ul>
     <div class="main">
-      <div class="page_header" ></div>
+      <header class="header"></header>
       <div class="author">
         <div class="head">
           <img src="images/wanderer.jpg" class="avatar">
         </div>
-        <h3 class="name" id="title"></h3>
-        <p class="name" id="instruction"></p>
+        <h3 class="name" id="title" style="line-height: calc(1.3rem + .6vw);">Đông Tà - 東邪</h3>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-8">
-            <ul id="issue-list" class="main_content px-3" style="opacity: 1; transform: translateY(0px);">
+      <div class="container container-lg">
+        <div class="blog">
+          <div class="blog__content">
+            <ul id="issue-list" class="main_content margin-top-m" style="opacity: 1; transform: translateY(0px);">
               <br>
               <h4 class="title fs-5">Content is loading...</h4>
               </br>
             </ul>
           </div>
-          <div class="col-md-3 d-none d-lg-block" style="margin: 72px auto 0 auto;">
-            <a class="right_title">FEATURED TAGS</a>
-            <div class="tags" id="tags"></div>
-            <hr>
-            <a href="https://hungle00.github.io/content.html?id=3" target="_blank" class="right_title">ABOUT ME</a>
-            <p style="color: #7f8c8d; font-size: 14px;">Code for food</p>
-            <hr>
+          <div class="blog__sidebar margin-x-auto margin-top-m">
+            <h2 class="logo">
+              <a href="https://hungle00.github.io/content.html?id=3" target="_blank">Đông Tà - 東邪</a>
+            </h2>
+            <div class="blog__sidebar__description">Code for Food</div>
+            <ul class="tags margin-top-m" id="tags">
+            </ul>
           </div>
         </div>
       </div>
-      <div style="text-align: center">
+      <div class="text-center">
         <ul class="pagination" id="pages" style="display: none"></ul>
       </div>
-      <div class="footer" style="text-align: center">
-        <div id='icon' style="display: flex;justify-content: center;padding: 0;align-items: center"></div>
-        <div id="footer" style="text-align: center;background: #2c3e50;padding-top: 30px;color: white"></div>
+      <div class="footer text-center">
+        <div id="icon" class="display-flex justify-content-center align-items-center"></div>
+        <div id="footer" class="text-center padding-top-xl" style="background: #2c3e50;color: white"></div>
       </div>
     </div>
   </body>
   <script src = "js/jquery.min.js"></script>
-  <script src = "js/typed.js"></script>
   <script src = "js/gitblog.js"></script>
+  <script src = "js/typed.js"></script>
   <script>
       $(function(){ 
       　$('.head').css("opacity","1");
@@ -67,15 +66,6 @@
         $('.name').css("transform","translateY(0)");
         $('.main_content').css("opacity","1");
         $('.main_content').css("transform","translateY(0)");
-        
-        $("#changerificwordspanid").typed({
-          strings: ["good", "happy", "healthy", "tall"],
-          typeSpeed: 100,
-          startDelay: 10,
-          showCursor: true,
-          shuffle: true,
-          loop:true
-        });
       });
     </script>
 </html>

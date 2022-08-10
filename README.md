@@ -27,6 +27,5 @@ You can set labels for each article in Github issues page.
 ### Dependence
 * [gitment](https://github.com/imsun/gitment)
 * [jQuery](http://www.jquery.org/)
-* [Bootstrap](http://www.getbootstrap.com/)
 * [type.js](https://github.com/mattboldt/typed.js)
 

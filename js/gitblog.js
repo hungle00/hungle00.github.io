@@ -602,7 +602,7 @@ var gitblog = function(config) {
                 url: 'https://api.github.com/repos/' + config.name + '/' + config.repo + '/labels',
                 success: function(data) {
                     for (var i in data) {
-                        document.getElementById('tags').innerHTML += '<a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a>';
+                        document.getElementById('tags').innerHTML += '<li class="blog__sidebar__issue"><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
                     }
                 },
             });
@@ -612,11 +612,12 @@ var gitblog = function(config) {
             for (var i in data) {
                 var labels_content = '';
                 for (var j in data[i].labels) {
-                    labels_content += '<li><a href=issue_per_label.html?label=' + data[i].labels[j].name + '>' + data[i].labels[j].name + '</a></li>';
+                    labels_content += '<li class="post__meta"><a href=issue_per_label.html?label=' + data[i].labels[j].name + '>' + data[i].labels[j].name + '</a></li>';
                 }
                 data[i].body = data[i].body.replace(/<.*?>/g, "");
+                console.log(data[i].body)
                 data[i].created_at = self.utc2localTime(data[i].created_at);
-                document.getElementById('issue-list').innerHTML += '<li class="mb-3"><h3 class="fs-4 fw-bold mb-2"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue fs-6">' + data[i].body + '</p></div>' + '<ul class="meta"><li>' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
+                document.getElementById('issue-list').innerHTML += '<li class="margin-bottom-l"><h3 class="fs-4 fw-bold mb-2"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="post__date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue fs-6">' + truncateString(data[i].body, 300) + '</p></div>' + '<ul class="meta"><li class="post__meta">' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
             }
         },
         show: function(request_url) {
@@ -806,3 +807,11 @@ $.ajax({
         new gitblog(data).init();
     }
 });
+
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+}

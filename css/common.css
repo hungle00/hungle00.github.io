@@ -134,26 +134,6 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
     top: 57px;
     z-index: -1;
 }
-.tags {
-    margin-top:10px
-}
-.tags a {
-    display: inline-block;
-    border: 1px solid rgba(255,255,255,.8);
-    border-radius: 999em;
-    padding: 0 10px;
-    line-height:24px;
-    font-size: 12px;
-    text-decoration: none;
-    margin-bottom: 6px;
-    margin-right:5px;
-    color:#7f8c8d;
-    border-color:#bfbfbf
-}
-
-.tags a:hover {
-    border-color: #7f8c8d
-}
 
 .article {
     margin: 0 auto;

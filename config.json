@@ -13,9 +13,6 @@
     "menu": {
         "Homepage":"./"
     },
-    "friends": {
-        "lmh-dongta" : "https://lmh-dongta.blogspot.com/"
-    },
     "icons": {
         "Github" : {
             "icon_src" : "images/github.svg",

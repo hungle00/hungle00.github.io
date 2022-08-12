@@ -1,20 +1,5 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:root {
-  --title-color: #34495e;
-}
-
-html {
-  height: 100%;
-}
-
 body {
   height: 100%;
-  margin: 0;
 }
 
 a {
@@ -42,21 +27,20 @@ h2 {
   position: relative;
   min-height: 100%;
   width: 100%;
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 10px 10px;
+  padding: 1rem;
   border: 1px solid #eeeeee;
 }
 
-.column,
 .columns {
   width: 100%;
   float: right;
-  box-sizing: border-box;
 }
 
 .site-header {
   text-align: left;
+  margin-bottom: 12px;
 }
 
 .nav .page-link {
@@ -80,6 +64,11 @@ h2 {
 
 .article_title {
   color: var(--title-color);
+  font-size: 24px;
+}
+
+.user-info {
+  font-size: 24px;
 }
 
 @media (min-width: 401px) {
@@ -96,8 +85,13 @@ h2 {
 }
 
 @media (min-width: 781px) {
-  h2 {
+  .user-info {
     font-size: 22px;
+  }
+
+  .article_title {
+    color: var(--title-color);
+    font-size: 28px;
   }
 
   .container {
@@ -105,7 +99,6 @@ h2 {
     padding: 4rem 2rem;
   }
 
-  .column,
   .columns {
     margin-right: 4%;
   }
@@ -118,7 +111,6 @@ h2 {
     width: 74%;
   }
 
-  .column:first-child,
   .columns:first-child {
     margin-right: 0;
   }

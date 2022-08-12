@@ -12,12 +12,13 @@
   </head>
   <body>
     <label class="navi-button">MENU</label>
-    <input type="text" class="search-input" placeholder="search">
-    <img src="images/search.svg" class="search">
+    <input type="text" class="search-input display-none" placeholder="search">
+    <img src="images/search.svg" class="search display-none">
     <ul class="main-navication">
-      <ul id="menu"></ul>
+      <p id="menu" class="margin-left-l"></p>
       <hr>
-      <ul id="friends"></ul>
+      <ul class="tags margin-top-m margin-left-l" id="side_tags">
+      </ul>
     </ul>
     <div class="main">
       <header class="header"></header>
@@ -47,7 +48,7 @@
         </div>
       </div>
       <div class="text-center">
-        <ul class="pagination" id="pages" style="display: none"></ul>
+        <ul class="pagination display-none" id="pages"></ul>
       </div>
       <div class="footer text-center">
         <div id="icon" class="display-flex justify-content-center align-items-center"></div>

@@ -1,9 +1,3 @@
-.footer {
-    background: #2c3e50;
-    padding: 30px 15px;
-    width: 100%;
-    bottom:0;
-}
 .navi-button {
     font-size: .8rem;
     color: #7f8c8d;
@@ -21,10 +15,7 @@
     transform: translateX(0);
     transition: all 0.4s;
 }
-.main-navication li {
-    list-style: none;
-    padding-left: 10px;
-}
+
 .main {
     transform: translateX(0);
     min-height: 100vh;
@@ -43,19 +34,27 @@
     transition: all 0.4s;
     overflow: auto;
 }
+
+@media only screen and (min-width: 900px) {
+    .navi-button { 
+        display: none;
+    }
+}
+
+.main-navication li {
+    list-style: none;
+}
+
 .main-navication a, .main-navication a:visited {
     display: block;
-    padding: 0 15px;
     color: white;
     text-decoration: none;
 }
 .main-navication a:hover {
-    display: block;
-    padding: 0 15px;
     color: white;
+    text-decoration: underline;
 }
 .main-navication span {
-    font-size: 12px;
     line-height: 48px;
     display: block;
     opacity: 0;
@@ -109,30 +108,18 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
     transform: translateY(0px);
     transition: all 0.4s;
 }
-.search {
-    opacity: 0.6;
-    position: fixed;
-    right: 20px;
-    top: 60px;
-    cursor: pointer;
-    z-index: 99;
-    width: 35px;
-    transition: all 0.4s;
+
+.container {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0 1rem;
 }
-.search-input {
-    width: 42px;
-    height: 42px;
-    padding-left: 15px;
-    border-radius: 42px;
-    border: 1px solid rgba(127,140,141,0.6);
-    background: white;
-    outline: none;
-    position: relative;
-    transition: all 0.4s;
-    position: fixed;
-    right: 10px;
-    top: 57px;
-    z-index: -1;
+
+.footer {
+    background: #2c3e50;
+    padding: 30px 15px;
+    width: 100%;
+    bottom:0;
 }
 
 .article {

@@ -11,14 +11,7 @@
     <link rel="stylesheet" href="css/gitment.css">
   </head>
   <body>
-    <label class="navi-button">MENU</label>
-    <input type="text" class="search-input" placeholder="search">
-    <img src="images/search.svg" class="search">
-    <ul class="main-navication">
-      <ul id="menu"></ul>
-      <hr>
-      <ul id="friends"></ul>
-    </ul>
+    <a href="/"><label class="navi-button">Home</label></a>
     <div class="main">
       <div class="padding-y-3xl margin-bottom-xl text-center" style="background-color:#ecf0f1;">
         <h2 id="title"></h2>
@@ -37,7 +30,7 @@
             <ul class="gitment-comments-list" id="comment-list"></ul>
           </div>
           <div class="text-center">
-            <ul class="pagination" id="pages" style="display: none"></ul>
+            <ul class="pagination display-none" id="pages"></ul>
           </div>
           <div class="text-left">
             <div class="gitment-container gitment-editor-container">
@@ -70,7 +63,7 @@
         </div>
       </div>
       <div class="footer text-center">
-        <div id='icon' style="display: flex;justify-content: center;padding: 0;align-items: center"></div>
+        <div id="icon" class="display-flex justify-content-center align-items-center"></div>
         <div id="footer" class="text-center padding-top-xl" style="background: #2c3e50;color: white"></div>
       </div>
     </div>

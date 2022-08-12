@@ -84,14 +84,7 @@ var gitblog = function(config) {
         show: function() {
             var menu = this;
             for(var name in config.menu) {
-                document.getElementById("menu").innerHTML += '<li><a href=' + config.menu[name] + '><span>' + name + '</span></a></li>';
-            }
-            if (Object.keys(config.friends).length != 0) {
-                var menu_friend = document.getElementById("friends");
-                menu_friend.innerHTML = '<li><text style="font-zise:14px"><span style="color: white;transform:translateX(4px)">Other Blog：</span></text></li>';
-                for (var name in config.friends) {
-                    menu_friend.innerHTML += '<li><a href=' + config.friends[name] + ' target="_blank"><span>' + name + '</span></a></li>';
-                }
+                document.getElementById("menu").innerHTML += '<a href=' + config.menu[name] + '><span>' + name + '</span></a>';
             }
             $(".search-input").on("blur",
             function() {
@@ -602,7 +595,8 @@ var gitblog = function(config) {
                 url: 'https://api.github.com/repos/' + config.name + '/' + config.repo + '/labels',
                 success: function(data) {
                     for (var i in data) {
-                        document.getElementById('tags').innerHTML += '<li class="blog__sidebar__issue"><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
+                        document.getElementById("tags").innerHTML += '<li><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
+                        document.getElementById("side_tags").innerHTML += '<li><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
                     }
                 },
             });
@@ -615,7 +609,6 @@ var gitblog = function(config) {
                     labels_content += '<li class="post__meta"><a href=issue_per_label.html?label=' + data[i].labels[j].name + '>' + data[i].labels[j].name + '</a></li>';
                 }
                 data[i].body = data[i].body.replace(/<.*?>/g, "");
-                console.log(data[i].body)
                 data[i].created_at = self.utc2localTime(data[i].created_at);
                 document.getElementById('issue-list').innerHTML += '<li class="margin-bottom-l"><h3 class="fs-4 fw-bold mb-2"><a href="content.html?id=' + data[i].number + '">' + data[i].title + '</a></h3><p class="post__date">' + data[i].created_at + '</p><div class="excerpt"><p class="issue fs-6">' + truncateString(data[i].body, 300) + '</p></div>' + '<ul class="meta"><li class="post__meta">' + data[i].user.login + '</li>' + labels_content + '</ul></li>';
             }

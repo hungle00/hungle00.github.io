@@ -76,12 +76,6 @@ h3 {
   padding-left: 0;
 }
 
-.container {
-  max-width: 100%;
-  margin: 1rem auto;
-  padding: 0 1.25rem;
-}
-
 .blog {
   display: flex;
   flex-wrap: wrap;
@@ -90,8 +84,7 @@ h3 {
 .blog__content {
   flex: 0 0 auto;
   width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0 .75rem;
 }
 
 .blog__sidebar {
@@ -99,7 +92,7 @@ h3 {
   text-align: right;
 }
 
-.blog__sidebar__issue {
+.blog__sidebar li {
   list-style: none;
   font-weight: 100;
   margin-bottom: .75rem;
@@ -118,6 +111,7 @@ h3 {
   .container-lg {
     max-width: 80%;
   }
+  
   .blog__content {
     flex: 0 0 auto;
     width: 65%;
@@ -182,11 +176,4 @@ h3 {
   font-weight: 700;
   cursor:pointer;
   color:var(--title-color);
-}
-
-.footer {
-  background: #2c3e50;
-  padding: 30px 15px;
-  width: 100%;
-  bottom: 0;
 }

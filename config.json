@@ -5,7 +5,7 @@
     "client_secret": "601510b62029684e9e2f137e9dccabcc013c8fb7",
     "title": "Đông Tà - 東邪",
     "instruction": "",
-    "server_link": "https://gh-oauth.imsun.net/",
+    "server_link": "https://gitblog-oauth.glitch.me/oauth/",
     "filter": {
         "creator": "all",
         "state": "open"

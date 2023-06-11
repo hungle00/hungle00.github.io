@@ -595,7 +595,7 @@ var gitblog = function(config) {
                 url: 'https://api.github.com/repos/' + config.name + '/' + config.repo + '/labels',
                 success: function(data) {
                     for (var i in data) {
-                        document.getElementById("tags").innerHTML += '<li><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
+                        document.getElementById("tags").innerHTML += '<li class="tag"><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
                         document.getElementById("side_tags").innerHTML += '<li><a href="issue_per_label.html?label=' + data[i].name + '">' + data[i].name + '</a></li>';
                     }
                 },

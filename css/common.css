@@ -72,6 +72,8 @@ ul.pagination li a {
     float: left;
     text-decoration: none;
     border:transparent;
+    padding: 6px 12px;
+    
 }
 ul.pagination li a.active {
     background-color: #ddd;

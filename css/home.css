@@ -69,6 +69,8 @@ h3 {
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.8s;
+  color: var(--title-color);
+  line-height: calc(1.3rem + 0.6vw);
 }
 
 .pagination {
@@ -92,14 +94,18 @@ h3 {
   text-align: right;
 }
 
-.blog__sidebar li {
+.blog__sidebar ul li, .tag {
   list-style: none;
-  font-weight: 100;
-  margin-bottom: .75rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
 }
 
-.blog__sidebar__description {
-  color: #999;
+.sidebar__title {
+  color: var(--title-color);
+}
+
+.text-gray {
+  color: #BBB;
 }
 
 @media screen and (min-width: 900px) {

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects — Hùng Lê</title>
+  <meta
+    name="description"
+    content="Projects and experiments by Hùng Lê — Ruby, Rails, Go, Elixir and Python."
+  >
+
+  <style>
+    :root {
+      --text: #222;
+      --muted: #777;
+      --light: #aaa;
+      --border: #e5e5e5;
+
+      /* Replace with the exact accent color used by your blog */
+      --accent: #8b0000;
+
+      --max-width: 940px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* ================================
+       Header
+    ================================= */
+
+    header {
+      padding: 24px 0 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+
+    /* ================================
+       Intro
+    ================================= */
+
+    .intro {
+      max-width: 730px;
+      padding: 34px 0 25px;
+    }
+
+    .eyebrow {
+      margin-bottom: 5px;
+
+      color: var(--muted);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      margin: 0;
+
+      color: var(--accent);
+
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    .intro p {
+      margin: 9px 0 0;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .intro strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+
+    /* ================================
+       Technical Stack
+    ================================= */
+
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      margin: 5px 0 38px;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stack-group {
+      padding: 17px 18px 17px 0;
+
+      border-right: 1px solid var(--border);
+    }
+
+    .stack-group:not(:first-child) {
+      padding-left: 18px;
+    }
+
+    .stack-group:last-child {
+      border-right: 0;
+    }
+
+    .stack-language {
+      margin-bottom: 5px;
+
+      color: var(--accent);
+
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .stack-tools {
+      color: var(--muted);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+
+    /* ================================
+       Section Header
+    ================================= */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+
+      border-bottom: 1px solid var(--border);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .section-header strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .section-header span {
+      color: var(--light);
+    }
+
+
+    /* ================================
+       Projects
+    ================================= */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 0 28px;
+    }
+
+    .project {
+      min-height: 145px;
+
+      padding: 20px 0 22px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .project-number {
+      color: var(--light);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+    }
+
+    .project-name {
+      color: var(--accent);
+
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .project-name:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .project-description {
+      max-width: 390px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .project-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .project-tech {
+      color: #999;
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 9px;
+    }
+
+    .project-tech strong {
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .project-link {
+      color: var(--muted);
+
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .project-link:hover {
+      color: var(--text);
+    }
+
+
+    /* ================================
+       Writing
+    ================================= */
+
+    .writing {
+      margin-top: 38px;
+      margin-bottom: 45px;
+    }
+
+    .post {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      gap: 20px;
+
+      padding: 11px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-title {
+      font-size: 13px;
+    }
+
+    .post-title:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .post-date {
+      color: var(--light);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+    }
+
+
+    /* ================================
+       Footer
+    ================================= */
+
+    footer {
+      padding: 18px 0 35px;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--light);
+
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+      font-size: 10px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    /* ================================
+       Responsive
+    ================================= */
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      .intro {
+        padding: 28px 0 22px;
+      }
+
+      .intro h1 {
+        font-size: 29px;
+      }
+
+      .stack {
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-bottom: 30px;
+      }
+
+      .stack-group:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stack-group:nth-child(3) {
+        padding-left: 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .stack-group:nth-child(4) {
+        border-top: 1px solid var(--border);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        min-height: 0;
+
+        padding: 17px 0 19px;
+      }
+
+      .project-description {
+        max-width: none;
+      }
+
+      .project-name {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Header -->
+
+  <header>
+    <div class="container nav">
+
+      <a class="brand" href="./">
+        Hùng Lê
+      </a>
+
+      <nav>
+        <a href="./">Blog</a>
+        <a href="./portfolio.html">Portfolio</a>
+
+        <a
+          href="https://github.com/hungle00"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <div class="container">
+
+      <!-- Intro -->
+
+      <div class="intro">
+
+        <div class="eyebrow">
+          Engineer / Builder
+        </div>
+
+        <h1>
+          Projects
+        </h1>
+
+        <p>
+          <strong>Ruby / Rails developer</strong> building web
+          applications for <strong>marketplaces and business
+          management systems</strong>. I also explore backend
+          systems, concurrency and realtime communication through
+          projects with Go, Elixir and Python.
+        </p>
+
+      </div>
+
+
+      <!-- Technical Stack -->
+
+      <div class="stack">
+
+        <div class="stack-group">
+          <div class="stack-language">
+            Ruby
+          </div>
+
+          <div class="stack-tools">
+            Rails · Fiber · RSpec
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <div class="stack-language">
+            Python
+          </div>
+
+          <div class="stack-tools">
+            Flask · FastAPI · SQLAlchemy
+          </div>
+        </div>
+
+        <div class="stack-group">
+
+          <div class="stack-language">
+            Go
+          </div>
+
+          <div class="stack-tools">
+            Concurrency · WebSocket · Redis
+          </div>
+
+        </div>
+
+
+        <div class="stack-group">
+          <div class="stack-language">
+            Elixir
+          </div>
+
+          <div class="stack-tools">
+            Phoenix · OTP · BEAM
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Projects -->
+
+      <div class="section-header">
+
+        <strong>
+          Selected projects
+        </strong>
+
+        <span>
+          06
+        </span>
+
+      </div>
+
+
+      <div class="projects">
+
+
+        <!-- 01 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              01
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/rondo_form"
+              target="_blank"
+              rel="noopener"
+            >
+              Rondo Form
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Lightweight form object library for Ruby applications,
+            designed to keep validation and business input logic
+            outside ActiveRecord models.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Ruby</strong> · Gem · Form Objects
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/rondo_form"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              02
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/go-pusher"
+              target="_blank"
+              rel="noopener"
+            >
+              Go Pusher
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Pusher-like realtime messaging service built from
+            scratch, exploring connections, rooms and Pub/Sub.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Go</strong> · WebSocket · Redis
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/go-pusher"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              03
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/sqlite-opus"
+              target="_blank"
+              rel="noopener"
+            >
+              SQLite Opus
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Web-based SQLite browser with schema inspection,
+            query execution and an interactive database UI.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Python</strong> · Flask · HTMX · SQLite
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/sqlite-opus"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              04
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00"
+              target="_blank"
+              rel="noopener"
+            >
+              Redis Job Queue
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Background job system built around Redis Streams,
+            consumer groups, retries and dead-letter handling.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Python</strong> · Redis Streams · Workers
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              05
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/ruby-fiber-showcase"
+              target="_blank"
+              rel="noopener"
+            >
+              Ruby Fiber Showcase
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Experiments with Ruby Fibers and cooperative
+            concurrency.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Ruby</strong> · Fiber · Concurrency
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/ruby-fiber-showcase"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              06
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/islands_duel"
+              target="_blank"
+              rel="noopener"
+            >
+              Islands Duel
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Small realtime game experiment built with Phoenix,
+            exploring stateful server-side applications.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Elixir</strong> · Phoenix · Realtime
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/islands_duel"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- Writing -->
+
+      <div class="writing">
+
+        <div class="section-header">
+
+          <strong>
+            Writing
+          </strong>
+
+          <span>
+            notes
+          </span>
+
+        </div>
+
+
+        <div class="post">
+
+          <a class="post-title" href="./">
+            Actor Model and CSP
+          </a>
+
+          <span class="post-date">
+            2026
+          </span>
+
+        </div>
+
+
+        <div class="post">
+
+          <a class="post-title" href="./">
+            Building a Pusher from scratch
+          </a>
+
+          <span class="post-date">
+            2026
+          </span>
+
+        </div>
+
+
+        <div class="post">
+
+          <a class="post-title" href="./">
+            Redis Streams as a Job Queue
+          </a>
+
+          <span class="post-date">
+            2026
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="container footer">
+
+      <span>
+        Hùng Lê
+      </span>
+
+      <a
+        href="https://github.com/hungle00"
+        target="_blank"
+        rel="noopener"
+      >
+        github.com/hungle00
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Projects — Hùng Lê</title>
+  <title>Portfolio — Hùng Lê</title>
   <meta
     name="description"
-    content="Projects and experiments by Hùng Lê — Ruby, Rails, Go, Elixir and Python."
+    content="Projects and experiments by Hùng Lê — Ruby, Python, JavaScript, Go and Elixir."
   >
 
   <style>
@@ -184,6 +184,11 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: -0.01em;
+    }
+
+    .stack-note {
+      color: var(--light);
+      font-size: 9px;
     }
 
     .stack-tools {
@@ -510,15 +515,14 @@
         </div>
 
         <h1>
-          Projects
+          Portfolio
         </h1>
 
         <p>
-          <strong>Ruby / Rails developer</strong> building web
-          applications for <strong>marketplaces and business
-          management systems</strong>. I also explore backend
-          systems, concurrency and realtime communication through
-          projects with Go, Elixir and Python.
+          <strong>Backend engineer</strong> building web applications
+          and backend systems with <strong>Ruby, Python and JavaScript</strong>.
+          I also explore concurrency, realtime communication and systems
+          programming through projects with Go and Elixir.
         </p>
 
       </div>
@@ -530,44 +534,44 @@
 
         <div class="stack-group">
           <div class="stack-language">
-            Ruby
+            Languages
           </div>
 
           <div class="stack-tools">
-            Rails · Fiber · RSpec
+            Ruby · Python · JavaScript<br>
+            Go <span class="stack-note">(learning)</span> · Elixir
           </div>
         </div>
 
         <div class="stack-group">
           <div class="stack-language">
-            Python
+            Backend
           </div>
 
           <div class="stack-tools">
-            Flask · FastAPI · SQLAlchemy
+            Rails · Flask · FastAPI · Phoenix<br>
+            REST API · WebSocket 
           </div>
         </div>
 
         <div class="stack-group">
-
           <div class="stack-language">
-            Go
+            Databases
           </div>
 
           <div class="stack-tools">
-            Concurrency · WebSocket · Redis
+            PostgreSQL · MySQL · SQLite · Redis<br>
           </div>
-
         </div>
-
 
         <div class="stack-group">
           <div class="stack-language">
-            Elixir
+            Infrastructure
           </div>
 
           <div class="stack-tools">
-            Phoenix · OTP · BEAM
+            Docker · AWS · Nginx · Capistrano<br>
+            Linux · Flyio
           </div>
         </div>
 
@@ -614,15 +618,14 @@
           </div>
 
           <p class="project-description">
-            Lightweight form object library for Ruby applications,
-            designed to keep validation and business input logic
-            outside ActiveRecord models.
+            Build a Rails gem for handling dynamic nested forms 
+            with reusable helpers and StimulusJS.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Ruby</strong> · Gem · Form Objects
+              <strong>Ruby</strong> · Gem · StimulusJS
             </span>
 
             <a
@@ -638,61 +641,13 @@
 
         </article>
 
-
         <!-- 02 -->
-
         <article class="project">
 
           <div class="project-top">
 
             <span class="project-number">
               02
-            </span>
-
-            <a
-              class="project-name"
-              href="https://github.com/hungle00/go-pusher"
-              target="_blank"
-              rel="noopener"
-            >
-              Go Pusher
-            </a>
-
-          </div>
-
-          <p class="project-description">
-            Pusher-like realtime messaging service built from
-            scratch, exploring connections, rooms and Pub/Sub.
-          </p>
-
-          <div class="project-bottom">
-
-            <span class="project-tech">
-              <strong>Go</strong> · WebSocket · Redis
-            </span>
-
-            <a
-              class="project-link"
-              href="https://github.com/hungle00/go-pusher"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub →
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- 03 -->
-
-        <article class="project">
-
-          <div class="project-top">
-
-            <span class="project-number">
-              03
             </span>
 
             <a
@@ -730,42 +685,40 @@
 
         </article>
 
-
-        <!-- 04 -->
-
+        <!-- 03 -->
         <article class="project">
 
           <div class="project-top">
 
             <span class="project-number">
-              04
+              03
             </span>
 
             <a
               class="project-name"
-              href="https://github.com/hungle00"
+              href="https://github.com/hungle00/go-pusher"
               target="_blank"
               rel="noopener"
             >
-              Redis Job Queue
+              Go Pusher
             </a>
 
           </div>
 
           <p class="project-description">
-            Background job system built around Redis Streams,
-            consumer groups, retries and dead-letter handling.
+            <i> (Current Working)</i> Pusher-like realtime messaging service built from
+            scratch, exploring WebSocket and Redis.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Python</strong> · Redis Streams · Workers
+              <strong>Go</strong> · WebSocket · Redis
             </span>
 
             <a
               class="project-link"
-              href="https://github.com/hungle00"
+              href="https://github.com/hungle00/go-pusher"
               target="_blank"
               rel="noopener"
             >
@@ -776,9 +729,51 @@
 
         </article>
 
+        <!-- 04 -->
+        <article class="project">
+
+          <div class="project-top">
+
+            <span class="project-number">
+              04
+            </span>
+
+            <a
+              class="project-name"
+              href="https://github.com/hungle00/islands_duel"
+              target="_blank"
+              rel="noopener"
+            >
+              Islands Duel
+            </a>
+
+          </div>
+
+          <p class="project-description">
+            Small realtime game experiment built with Phoenix,
+            exploring stateful server-side applications.
+          </p>
+
+          <div class="project-bottom">
+
+            <span class="project-tech">
+              <strong>Elixir</strong> · Phoenix · Realtime
+            </span>
+
+            <a
+              class="project-link"
+              href="https://github.com/hungle00/islands_duel"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </article>
 
         <!-- 05 -->
-
         <article class="project">
 
           <div class="project-top">
@@ -822,9 +817,7 @@
 
         </article>
 
-
         <!-- 06 -->
-
         <article class="project">
 
           <div class="project-top">
@@ -835,29 +828,29 @@
 
             <a
               class="project-name"
-              href="https://github.com/hungle00/islands_duel"
+              href="https://github.com/hungle00/redis-job-queue0"
               target="_blank"
               rel="noopener"
             >
-              Islands Duel
+              Redis Job Queue
             </a>
 
           </div>
 
           <p class="project-description">
-            Small realtime game experiment built with Phoenix,
-            exploring stateful server-side applications.
+            Background job system built around Redis Streams,
+            consumer groups, retries and dead-letter handling.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Elixir</strong> · Phoenix · Realtime
+              <strong>Python</strong> · Redis Streams · Workers
             </span>
 
             <a
               class="project-link"
-              href="https://github.com/hungle00/islands_duel"
+              href="https://github.com/hungle00/redis-job-queue"
               target="_blank"
               rel="noopener"
             >
@@ -865,7 +858,6 @@
             </a>
 
           </div>
-
         </article>
 
       </div>
@@ -890,8 +882,8 @@
 
         <div class="post">
 
-          <a class="post-title" href="./">
-            Actor Model and CSP
+          <a class="post-title" href="./content.html?id=27">
+            Ruby vs Python: Fiber and Coroutine
           </a>
 
           <span class="post-date">
@@ -903,8 +895,21 @@
 
         <div class="post">
 
-          <a class="post-title" href="./">
-            Building a Pusher from scratch
+          <a class="post-title" href="./content.html?id=21">
+            Concurrency in Ruby: Thread and Fiber
+          </a>
+
+          <span class="post-date">
+            2025
+          </span>
+
+        </div>
+
+
+        <div class="post">
+
+          <a class="post-title" href="./content.html?id=29">
+            Implement Redis-backed job queue
           </a>
 
           <span class="post-date">
@@ -913,15 +918,14 @@
 
         </div>
 
-
         <div class="post">
 
-          <a class="post-title" href="./">
-            Redis Streams as a Job Queue
+          <a class="post-title" href="./content.html?id=11">
+            Ruby metaprogramming - some techniques
           </a>
 
           <span class="post-date">
-            2026
+            2024
           </span>
 
         </div>

@@ -16,6 +16,8 @@
       --muted: #777;
       --light: #aaa;
       --border: #e5e5e5;
+      --accent-soft: #fbf2f2;
+      --accent-border: #ead1d1;
 
       /* Replace with the exact accent color used by your blog */
       --accent: #8b0000;
@@ -177,6 +179,10 @@
     }
 
     .stack-language {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
       margin-bottom: 5px;
 
       color: var(--accent);
@@ -184,6 +190,23 @@
       font-size: 15px;
       font-weight: 600;
       letter-spacing: -0.01em;
+    }
+
+    .icon {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 14px;
+      height: 14px;
+    }
+
+    .icon-sprite {
+      display: none;
+    }
+
+    .stack-language .icon {
+      width: 15px;
+      height: 15px;
+      color: var(--accent);
     }
 
     .stack-note {
@@ -248,15 +271,30 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
 
-      gap: 0 28px;
+      gap: 14px;
     }
 
     .project {
       min-height: 145px;
 
-      padding: 20px 0 22px;
+      padding: 18px;
 
-      border-bottom: 1px solid var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease;
+    }
+
+    .project:hover,
+    .project:focus-within {
+      transform: translateY(-2px);
+      border-color: var(--accent-border);
+      background-color: #fffdfd;
+      box-shadow: 0 5px 16px rgb(75 20 20 / 6%);
     }
 
     .project-top {
@@ -308,13 +346,19 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      flex-wrap: wrap;
 
       gap: 12px;
       margin-top: 13px;
     }
 
     .project-tech {
-      color: #999;
+      width: fit-content;
+      max-width: 100%;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: var(--accent-soft);
+      color: #766565;
 
       font-family:
         "SFMono-Regular",
@@ -328,19 +372,54 @@
     .project-tech strong {
       color: var(--accent);
 
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
     }
 
     .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
       color: var(--muted);
 
       font-size: 11px;
       white-space: nowrap;
+      transition: color 160ms ease;
     }
 
     .project-link:hover {
       color: var(--text);
+      text-decoration: none;
+    }
+
+    .project-link .icon {
+      width: 13px;
+      height: 13px;
+    }
+
+    .project-link:hover .icon-arrow {
+      transform: translate(2px, -1px);
+    }
+
+    .icon-arrow {
+      transition: transform 160ms ease;
+    }
+
+    .project-link:focus-visible,
+    .project-name:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
 
@@ -459,7 +538,7 @@
       .project {
         min-height: 0;
 
-        padding: 17px 0 19px;
+        padding: 16px;
       }
 
       .project-description {
@@ -475,6 +554,30 @@
 
 
 <body>
+
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-code" viewBox="0 0 24 24">
+      <path d="m8 5-7 7 7 7M16 5l7 7-7 7M14 3l-4 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/>
+    </symbol>
+    <symbol id="icon-server" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="3" y="13" width="18" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M7 7.5h.01M7 16.5h.01M11 7.5h7M11 16.5h7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-infra" viewBox="0 0 24 24">
+      <path d="M7 18H5a3 3 0 0 1-.4-6A7.5 7.5 0 0 1 19 10a4 4 0 0 1 0 8h-2M9 15l3-3 3 3M12 12v9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.15 3.85 3.77 2.72.1-.73.4-1.23.7-1.52-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.43.11-2.98 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.7.11 2.98.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+    </symbol>
+  </svg>
 
   <!-- Header -->
 
@@ -533,6 +636,7 @@
 
         <div class="stack-group">
           <div class="stack-language">
+            <svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>
             Languages
           </div>
 
@@ -544,6 +648,7 @@
 
         <div class="stack-group">
           <div class="stack-language">
+            <svg class="icon" aria-hidden="true"><use href="#icon-server"/></svg>
             Backend
           </div>
 
@@ -555,6 +660,7 @@
 
         <div class="stack-group">
           <div class="stack-language">
+            <svg class="icon" aria-hidden="true"><use href="#icon-database"/></svg>
             Databases
           </div>
 
@@ -565,6 +671,7 @@
 
         <div class="stack-group">
           <div class="stack-language">
+            <svg class="icon" aria-hidden="true"><use href="#icon-infra"/></svg>
             Infrastructure
           </div>
 
@@ -633,7 +740,9 @@
               target="_blank"
               rel="noopener"
             >
-              GitHub →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
 
           </div>
@@ -677,7 +786,9 @@
               target="_blank"
               rel="noopener"
             >
-              GitHub →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
 
           </div>
@@ -695,46 +806,40 @@
 
             <a
               class="project-name"
-              href="https://github.com/hungle00/live-orderbook"
+              href="https://github.com/hungle00/orca-mq"
               target="_blank"
               rel="noopener"
             >
-              Live Crypto Order Book
+              OrcaMQ
             </a>
 
           </div>
 
           <p class="project-description">
-            Real-time crypto order book powered by the Binance WebSocket stream, with live bids, asks price.
+            A lightweight Elixir message broker supporting stream-based messaging, consumer groups and concurrent message processing.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Node.js</strong> · Fastify · WebSocket
+              <strong>Elixir</strong> · Erlang/OTP · TCP server
             </span>
 
             <a
               class="project-link"
-              href="https://github.com/hungle00/live-orderbook"
+              href="https://github.com/hungle00/orca-mq"
               target="_blank"
               rel="noopener"
             >
-              GitHub →
-            </a>
-            <a
-              class="project-link"
-              href="https://live-orderbook.fly.dev/"
-              target="_blank"
-              rel="noopener"
-            >
-              Live Demo →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
 
           </div>
-
         </article>
 
+        <!-- 04 -->
         <article class="project">
 
           <div class="project-top">
@@ -745,33 +850,34 @@
 
             <a
               class="project-name"
-              href="https://github.com/hungle00/go-pusher"
+              href="https://github.com/hungle00/docker-gallery"
               target="_blank"
               rel="noopener"
             >
-              Go Pusher
+              Docker Gallery
             </a>
 
           </div>
 
           <p class="project-description">
-            <i> (Current Working)</i> Pusher-like realtime messaging service built from
-            scratch, exploring WebSocket and Redis.
+            A web-based dashboard for managing Docker resources, with real-time container logs and resource monitoring.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Go</strong> · WebSocket · Redis
+              <strong>Python</strong> · FastAPI · Docker · HTMX
             </span>
 
             <a
               class="project-link"
-              href="https://github.com/hungle00/go-pusher"
+              href="https://github.com/hungle00/docker-gallery"
               target="_blank"
               rel="noopener"
             >
-              GitHub →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
 
           </div>
@@ -815,7 +921,9 @@
               target="_blank"
               rel="noopener"
             >
-              GitHub →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
             <a
               class="project-link"
@@ -823,14 +931,12 @@
               target="_blank"
               rel="noopener"
             >
-              Live Demo →
+              Live Demo
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
           </div>
 
         </article>
-
-        <!-- 05 -->
-
 
         <!-- 06 -->
         <article class="project">
@@ -843,37 +949,49 @@
 
             <a
               class="project-name"
-              href="https://github.com/hungle00/redis-job-queue"
+              href="https://github.com/hungle00/live-orderbook"
               target="_blank"
               rel="noopener"
             >
-              Redis Job Queue
+              Live Crypto Order Book
             </a>
 
           </div>
 
           <p class="project-description">
-            Background job system built around Redis Streams,
-            consumer groups, retries and dead-letter handling.
+            Real-time crypto order book powered by the Binance WebSocket stream, with live bids, asks price.
           </p>
 
           <div class="project-bottom">
 
             <span class="project-tech">
-              <strong>Python</strong> · Redis Streams · Workers
+              <strong>Node.js</strong> · Fastify · WebSocket
             </span>
 
             <a
               class="project-link"
-              href="https://github.com/hungle00/redis-job-queue"
+              href="https://github.com/hungle00/live-orderbook"
               target="_blank"
               rel="noopener"
             >
-              GitHub →
+              <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+              GitHub
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
+            </a>
+            <a
+              class="project-link"
+              href="https://live-orderbook.fly.dev/"
+              target="_blank"
+              rel="noopener"
+            >
+              Live Demo
+              <svg class="icon icon-arrow" aria-hidden="true"><use href="#icon-arrow"/></svg>
             </a>
 
           </div>
+
         </article>
+
 
       </div>
 
